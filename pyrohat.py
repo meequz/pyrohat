@@ -1,8 +1,8 @@
 #! /usr/bin/env python3
 # coding: utf-8
-import pyaudio, struct, math, wave, random
+import pyaudio, struct, math, wave, random, glob
 
-soundfiles = ['laugh1.wav', 'laugh2.wav', 'laugh4.wav']
+soundfiles = glob.glob('*.wav')
 CHUNK = 768
 TIMES = 80		#~ if chunk = 768, 57 times is one second
 FORMAT = pyaudio.paInt16
