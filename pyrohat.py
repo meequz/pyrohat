@@ -2,15 +2,15 @@
 # coding: utf-8
 import pyaudio, struct, math, wave, random, glob
 
+TIMES = 80		#~ if chunk = 768, 57 times is one second
+TRESH = 9 / 100
+
 soundfiles = glob.glob('*.wav')
 CHUNK = 768
-TIMES = 80		#~ if chunk = 768, 57 times is one second
 FORMAT = pyaudio.paInt16
 CHANNELS = 2
 RATE = 44100
 SHORT_NORMALIZE = 1.0 / 32768.0
-TRESH = 9 / 100
-WAIT_AFTER_LAUGH = 40	#~ not seconds
 
 def get_rms(block):
 	count = len(block)/2
